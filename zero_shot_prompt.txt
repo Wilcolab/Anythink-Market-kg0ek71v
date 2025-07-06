@@ -1,0 +1,14 @@
+/**
+ * Converts a string to snake_case.
+ * @param {string} text
+ * @returns {string}
+ */
+function toSnakeCase(text) {
+  return text
+    .replace(/([a-z])([A-Z])/g, '$1_$2')      // camelCase to camel_Case
+    .replace(/[\s\-]+/g, '_')                 // spaces and hyphens to underscores
+    .replace(/[^\w_]/g, '')                   // remove non-word characters except underscore
+    .toLowerCase();
+}
+
+module.exports = toSnakeCase;
